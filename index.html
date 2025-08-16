@@ -5,8 +5,8 @@
   <title>Owner Hub - KersMC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
-  <link rel="stylesheet" href="/dashboard/css/main.css">
-  <link rel="stylesheet" href="/dashboard/css/popup.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/popup.css">
   <link rel="icon" href="/logos/KersMC_logo.png">
   <style>
     .tile-link {
@@ -17,9 +17,6 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
   </style>
-  <!-- Auth0 SDK (moet boven je eigen auth.js script staan) -->
-  <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
-  <script src="/dashboard/js/auth.js" defer></script>
 </head>
 <body>
   <div id="header-placeholder"></div>
@@ -46,7 +43,7 @@
         <div class="column is-one-third">
           <a class="box tile-link has-background-danger has-text-white"
              style="cursor: pointer;"
-             onclick="downloadPopup.show('/dashboard/download/test.txt', 'Download test', 'Klik op deze knop om te kijken of het downloaden van bestanden werkt.')">
+             onclick="downloadPopup.show('/download/test.txt', 'Download test', 'Klik op deze knop om te kijken of het downloaden van bestanden werkt.')">
             <h3 class="title is-4">Download test</h3>
             <p>Klik op deze knop om te kijken of het downloaden van bestanden werkt.</p>
           </a>
@@ -62,21 +59,21 @@
   <div id="popup-placeholder"></div>
 
   <script>
-    fetch("/dashboard/partials/dashboard-header-owner.html")
+    fetch("/partials/dashboard-header-owner.html")
       .then(res => res.text())
       .then(data => document.getElementById("header-placeholder").innerHTML = data);
 
-    fetch("/dashboard/partials/dashboard-footer.html")
+    fetch("/partials/dashboard-footer.html")
       .then(res => res.text())
       .then(data => document.getElementById("footer-placeholder").innerHTML = data);
 
-    fetch("/dashboard/partials/popup.html")
+    fetch("/partials/popup.html")
       .then(res => res.text())
       .then(data => document.getElementById("popup-placeholder").innerHTML = data);
   </script>
 
   <!-- Scripts -->
-  <script src="/dashboard/js/popup.js"></script>
+  <script src="/js/popup.js"></script>
 
 </body>
 </html>
